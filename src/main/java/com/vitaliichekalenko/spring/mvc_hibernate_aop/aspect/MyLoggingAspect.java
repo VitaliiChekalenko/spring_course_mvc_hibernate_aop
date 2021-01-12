@@ -4,7 +4,6 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,11 +17,11 @@ public class MyLoggingAspect {
         String methodName = methodSignature.getName();
 
         System.out.println("Begin of " + methodName);
-        Object targetMethodresult = proceedingJoinPoint.proceed();
+        Object targetMethodResult = proceedingJoinPoint.proceed();
 
         System.out.println("End of " + methodName);
         System.out.println("\n ____________________________________________________ \n");
-    return targetMethodresult;
+    return targetMethodResult;
     }
 
 }
